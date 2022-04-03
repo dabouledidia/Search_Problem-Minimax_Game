@@ -75,9 +75,13 @@ When a player has no available move in his turn loses.
 java MainGame 2 6 true
 ```
 
-The program takes 3 parameters as input. The maximum number of blocks in a single move, the maximum depth
-the minimax tree can generate and a  there will be blacked blocks from the beginning of the game.
+The program takes 3 parameters as input. The maximum number of blocks in a single move (moveLimit), the maximum depth
+the minimax tree can generate (depthLimit) and if the player wishes to initiate black blocks from the beginning of the
+game (initiateBlackBlocks). For the last parameter only 1/3 of the board can be initiated to black blocks.
 
 ## Heuristic Function
 
-The optimal move for MAX is calculated by counting the available moves for every step the Minimax algorithm makes assuming MIN makes optimal moves as well. As a result MAX can calculate the cost of every possible move with the given depth limit and choose the one with the maximum value.
+The optimal move for MAX is calculated by counting the available moves for every step the Minimax algorithm makes
+assuming MIN makes optimal moves as well. As a result MAX can calculate the cost of every possible move with the
+given depth limit and choose the one with the maximum value. In addition, MAX chooses start position considering
+any initiated black blocks to have the maximum available moves for his turn.
